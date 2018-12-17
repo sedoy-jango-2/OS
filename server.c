@@ -39,7 +39,7 @@ int main(int argc, char **argv)
 	if ((temp = (ticket *) shmat(shmid, 0, 0)) == NULL)
 		sys_err ("client: shared memory attach error");
 	
-	semctl (semid, 0, SETVAL, 1); /* установить блокировку */
+	semctl (semid, 0, SETVAL, 1);
 	
 	for (int i = 0; i < n; i++)
 	{
@@ -48,7 +48,7 @@ int main(int argc, char **argv)
 		temp[i].buy = temp_local[i].buy = 0;
 	}
 	
-	semctl (semid, 0, SETVAL, 0); /* снять блокировку */
+	semctl (semid, 0, SETVAL, 0);
         
 	loop:
 		for (int i = 0; i < n; i++)
