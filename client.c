@@ -47,9 +47,9 @@ int main(int argc, char **argv)
 		printf("Место № %d\n", temp[i].num);
 	}
   
-	semctl (semid, 0, SETVAL, 1); /* установить блокировку */
+	semctl (semid, 0, SETVAL, 1);
       
-	semctl (semid, 0, SETVAL, 0); /* снять блокировку */
+	semctl (semid, 0, SETVAL, 0);
 	
 	shmdt (temp);
 	exit (0);
